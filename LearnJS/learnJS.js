@@ -64,6 +64,11 @@ const byField = (fieldName) => {
 }
 
 users.sort(byField('surname'));
-console.log(users);
+
+//============== EventListeners
+
+
+
+
 
 
