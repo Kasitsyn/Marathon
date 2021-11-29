@@ -30,15 +30,22 @@
     font-weight: 300;
     font-size: 96px;
     line-height: 96px;
-    /* identical to box height, or 100% */
-
+    
     display: flex;
     align-items: center;
     text-align: right;
     background-color: #17171c;
     border-width: 0px;
     color: #ffffff;
+    
 }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
 .row {
     display: flex;
     flex-direction: row;
@@ -73,13 +80,10 @@
 .clear {
     width: 153px;
 }
-.delete {
-}
+
 .operations {
     background-color: #4b5efc;
     margin: 0px;
-}
-.digitals {
 }
 
 .zero {
