@@ -1,0 +1,288 @@
+<!-- EVENT LISTENERS https://learn.javascript.ru/introduction-browser-events -->
+<!-- <!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <style>
+        .menu{
+            display: none;
+        }
+
+        .open {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id='pressOnMe' style='border-width: 0px; background: #FFFFFF'> ▶ Сладости (нажми меня)!</button>
+<div class='menu'>
+    <ul >
+        <li>Пирожное</li>
+        <li>Пончик</li>
+        <li>Мёд</li>
+    </ul>
+</div>
+    <script>
+        let elem = document.getElementById('pressOnMe')
+        let candiesList = document.querySelector('.menu')
+        CandiesOnClickChanger = () => {
+            if (elem.innerHTML === '▼ Сладости (нажми меня)!') {
+                elem.innerHTML = '▶ Сладости (нажми меня)!'
+                
+
+            } else {
+                elem.innerHTML = '▼ Сладости (нажми меня)!'
+                
+            }
+            candiesList.classList.toggle('open')
+
+        }
+        elem.addEventListener('click', CandiesOnClickChanger)
+
+    </script>
+
+</body>
+
+</html> -->
+<!-- ====================================================================================================== -->
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' type='text/css' href='messages.css' />
+    <meta charset='utf-8' />
+    <style>
+        body {
+            margin: 10px auto;
+            width: 470px;
+        }
+
+        h3 {
+            margin: 0;
+            padding-bottom: .3em;
+            font-size: 1.1em;
+        }
+
+        p {
+            margin: 0;
+            padding: 0 0 .5em;
+        }
+
+        .pane {
+            background: #edf5e1;
+            padding: 10px 20px 10px;
+            border-top: solid 2px #c4df9b;
+        }
+
+        .remove-button {
+            float: right;
+            font-size: 110%;
+            color: darkred;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            display: none;
+        }
+
+        .unhide {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class='remove-button'>[x]</button>
+
+    <div>
+        <div class='pane'>
+            <h3>Лошадь</h3>
+            <p>
+                Домашняя лошадь — животное семейства непарнокопытных, одомашненный и
+                единственный сохранившийся подвид дикой лошади, вымершей в дикой
+                природе, за исключением небольшой популяции лошади Пржевальского.
+            </p>
+        </div>
+        <div class='pane'>
+            <h3>Осёл</h3>
+            <p>
+                Домашний осёл (лат. Equus asinus asinus), или ишак, — одомашненный
+                подвид дикого осла (Equus asinus), сыгравший важную историческую роль
+                в развитии хозяйства и культуры человека и по-прежнему широко в
+                хозяйстве многих развивающихся стран.
+            </p>
+        </div>
+        <div class='pane'>
+            <h3>Кошка</h3>
+            <p>
+                Кошка, или домашняя кошка (лат. Felis silvestris catus), — домашнее
+                животное, одно из наиболее популярных(наряду с собакой)
+                «животных-компаньонов». Являясь одиночным охотником на грызунов и
+                других мелких животных, кошка — социальное животное, использующее для
+                общения широкий диапазон звуковых сигналов.
+            </p>
+        </div>
+    </div>
+    <script>
+        let pane = document.querySelectorAll('.pane')
+        let removeButton = document.querySelector('.remove-button')
+        removeButton.addEventListener('click', () => {
+            // removeButton.parentElement.remove()
+            alert('ass')
+        })
+        for (let elem of pane) {
+            let cloneRemoveButtone = removeButton.cloneNode(true);
+            cloneRemoveButtone.addEventListener('click', () => {
+                cloneRemoveButtone.parentElement.remove()
+            })
+            cloneRemoveButtone.classList.add('unhide')
+            elem.prepend(cloneRemoveButtone);
+        }
+
+
+
+    </script> -->
+    
+<!-- ====================================================================================================== -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='style.css'>
+    <style>
+        .slider {
+            width: 420px;
+            height: 200px;
+            background-color: #ccc;
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .arrow {
+            padding: 0;
+            background: #ddd;
+            border-radius: 15px;
+            border: 1px solid gray;
+            font-size: 24px;
+            line-height: 24px;
+            color: #444;
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+
+        }
+
+        .arrow-right {
+            left: 94%;
+        }
+
+        .arrow:focus {
+            outline: none;
+        }
+
+        .arrow:hover {
+            background: #ccc;
+            cursor: pointer;
+        }
+
+        ul {
+            height: 130px;
+            width: 9999px;
+            margin-left: 17px;
+            padding: 0;
+            list-style: none;
+            font-size: 0;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%)
+        }
+
+        ul img {
+            width: 130px;
+            height: 130px;
+            display: block;
+            /* убираем пустое место вокруг картинок */
+        }
+
+        ul li {
+            display: inline-block;
+            /* убираем пустое место между элементами списка */
+        }
+
+        .img-hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class='slider'>
+
+        <ul>
+            <li class='shown' style='display: inline-block;'><img src='https://ru.js.cx/carousel/1.png'></li>
+            <li class='shown' style='display: inline-block;'><img src='https://ru.js.cx/carousel/2.png'></li>
+            <li class='shown' style='display: inline-block;'><img src='https://ru.js.cx/carousel/3.png'></li>
+            <li class='hide' style='display: none;'><img src='https://ru.js.cx/carousel/4.png'></li>
+            <li class='hide' style='display: none;'><img src='https://ru.js.cx/carousel/5.png'></li>
+            <li class='hide' style='display: none;'><img src='https://ru.js.cx/carousel/6.png'></li>
+            <li class='hide' style='display: none;'><img src='https://ru.js.cx/carousel/7.png'></li>
+            <li class='hide' style='display: none;'><img src='https://ru.js.cx/carousel/8.png'></li>
+            <li class='hide' style='display: none;'><img src='https://ru.js.cx/carousel/9.png'></li>
+            <li class='hide' style='display: none;'><img src='https://ru.js.cx/carousel/10.png'></li>
+        </ul>
+        <button class='arrow'>⇦</button>
+        <button class='arrow arrow-right'>⇨</button>
+    </section>
+
+    <script>
+
+        let leftButton = document.querySelectorAll('.arrow')[0]
+        leftButton.addEventListener('click', () => {
+            let shownPic = document.querySelectorAll('.shown')
+            let firstShownPic = shownPic[0]
+            firstShownPic.style.display = 'none'
+            firstShownPic.classList.remove('shown')
+            firstShownPic.classList.add('hide-new')
+            let hidePic = document.querySelectorAll('.hide')
+            let firsHidetPic = hidePic[0]
+            firsHidetPic.style.display = 'inline-block'
+            firsHidetPic.classList.remove('hide')
+            firsHidetPic.classList.add('shown')
+            
+
+        })
+
+        let rightButton = document.querySelectorAll('.arrow')[1]
+        rightButton.addEventListener('click', () => {
+            let hidePic = document.querySelectorAll('.hide-new')
+            let firsHidetPic = hidePic[hidePic.length - 1]
+            firsHidetPic.style.display = 'inline-block'
+            firsHidetPic.classList.remove('hide-new')
+            firsHidetPic.classList.add('shown')
+
+            let shownPic = document.querySelectorAll('.shown')
+            if (shownPic.length >= 4) {
+                let firstShownPic = shownPic[shownPic.length - 1]
+                firstShownPic.style.display = 'none'
+                firstShownPic.classList.remove('shown')
+                firstShownPic.classList.add('hide')
+            }
+        })
+    </script>
+
+</body>
+
+</html>
