@@ -28,6 +28,8 @@ const renderTask = (index) => {
 
     addEventListenerOnDeleteBtn()
     addEventListenerOnCheckboxBtn()
+    inputAll[index].value = ''
+
 }
 
 const addEventListenerOnDeleteBtn = () => {
@@ -43,21 +45,45 @@ const addEventListenerOnCheckboxBtn = () => {
     const checkboxBtnAll = document.querySelectorAll('.todo_list__checkbox')
     checkboxBtnAll.forEach((elem) => {
         elem.addEventListener('click', (e) => {
-            elem.closest('div').classList.add('done')
+            elem.closest('div').classList.toggle('done')
+
         })
+
     })
+
 }
 
-addBtnAll.forEach((elem, index) => elem.addEventListener('click', (e) => {
-    if (index === 0) {
-        addTask(inputAll[index].value, 'high')
-        renderTask(index)
-    }
-    if (index === 1) {
-        addTask(inputAll[index].value, 'low')
-        renderTask(index)
-    }
-}))
+addBtnAll.forEach((elem, index) => {
+    elem.addEventListener('click', (e) => {
+        if (index === 0) {
+            addTask(inputAll[index].value, 'high')
+            renderTask(index)
+        }
+        if (index === 1) {
+            addTask(inputAll[index].value, 'low')
+            renderTask(index)
+        }
+
+    })
+
+
+})
+
+inputAll.forEach((elem, index) => {
+    elem.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            if (index === 0) {
+                addTask(inputAll[index].value, 'high')
+                renderTask(index)
+            }
+            if (index === 1) {
+                addTask(inputAll[index].value, 'low')
+                renderTask(index)
+            }
+        }
+
+    })
+})
 
 
 
