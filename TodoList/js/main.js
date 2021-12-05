@@ -1,24 +1,25 @@
+let id = 0
 const list = [
     {
-        id: 1,
+        id: id++,
         name: 'create a post',
         status: 'TODO',
         priority: 'low'
     },
     {
-        id: 2,
+        id: id++,
         name: 'test',
         status: 'Done',
         priority: 'high'
     }
 ]
 
-const addTask = (name) => {
+const addTask = (name, priority) => {
     list.push({
-        id: list.length + 1,
+        id: id++,
         name: name,
         status: 'TODO',
-        priority: 'high'
+        priority: priority
     })
 }
 
@@ -47,11 +48,7 @@ const showList = () => {
         `Todo: \n${toDoArr} \n\nIn Progress: \n${inProgressArr} \n\nDone: \n${doneArr}`        
     )
 }
-addTask('sleep')
-addTask('walk')
-addTask('study')
-deleteTask('test')
-changeStatus('sleep', "In Progress")
-changeStatus('study', "Done")
-showList()
-console.log(list)
+
+
+export { list, id, addTask, deleteTask, changeStatus, showList };
+
