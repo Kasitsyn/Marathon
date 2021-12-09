@@ -17,32 +17,20 @@
 
 <body>
 
-    <button onclick="showCircle(150, 150, 100, div => setTimeout(() => addElement(div), 2000)  )">showCircle(150, 150, 100)</button>
+    <button onclick="showCircle(150, 150, 100, div => setTimeout(() => addElement(div), 2000)  )">showCircle(150, 150,
+        100)</button>
 
     <script>
 
-        function addElement(parrentElem) {
-            let elem = document.createElement('div');
-            elem.textContent = 'Hello world!'
-            parrentElem.append(elem)
+        function delay(ms) {
+            return new Promise(function(resolve, reject) {
+                setTimeout( () => resolve(), ms)
+            })
         }
 
-        function showCircle(cx, cy, radius, callback) {
-            let div = document.createElement('div');
-            div.style.width = 0;
-            div.style.height = 0;
-            div.style.left = cx + 'px';
-            div.style.top = cy + 'px';
-            div.className = 'circle';
-            document.body.append(div);
+        delay(3000).then(() => alert('выполнилось через 3 секунды'));
 
-
-            div.style.width = radius * 2 + 'px';
-            div.style.height = radius * 2 + 'px';
-
-            callback(div)
-
-        }
+        
     </script>
 
 
