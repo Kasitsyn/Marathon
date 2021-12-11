@@ -8,24 +8,33 @@
 </head>
 
 <body>
-    <input type="text">
+    <input type="text" value='yura'>
 
     <button onclick='go()'>Click me</button>
 
     <script>
 
         async function go() {
-
+            const dataBase = {
+                name: '',
+                gender: '',
+                country: ''
+            }
             const inputElem = document.querySelector('input')
-            const serverUrl = 'https://api.genderize.io';
-            let firstName = inputElem.value
-            const url = `${serverUrl}?name=${firstName}`;
-
+            const genderUrl = 'https://api.genderize.io'
+            const nationUrl = 'https://api.nationalize.io'
+            dataBase.name = inputElem.value
+            let url = `${genderUrl}?name=${dataBase.name}`
             let response = await fetch(url)
             let data = await response.json()
+            dataBase.gender = data.gender
 
-            alert(data.gender)
-
+            url = `${nationUrl}?name=${dataBase.name}`
+            response = await fetch(url)
+            data = await response.json()
+            dataBase.country = data.country[0].country_id 
+            
+            alert(`${dataBase.gender}, ${dataBase.country}`)
 
 
 
