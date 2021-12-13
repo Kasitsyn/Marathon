@@ -8,38 +8,21 @@
 </head>
 
 <body>
-    <input type="text" value='yura'>
+    <form action="">
+        <textarea style="width:200px; height: 60px;" id="area"></textarea>
 
-    <button onclick='go()'>Click me</button>
+    </form>
+
 
     <script>
 
-        async function go() {
-            const dataBase = {
-                name: '',
-                gender: '',
-                country: ''
-            }
-            const inputElem = document.querySelector('input')
-            const genderUrl = 'https://api.genderize.io'
-            const nationUrl = 'https://api.nationalize.io'
-            dataBase.name = inputElem.value
-            let url = `${genderUrl}?name=${dataBase.name}`
-            let response = await fetch(url)
-            let data = await response.json()
-            dataBase.gender = data.gender
+        const TEXT_AREA = document.querySelector('textarea')
+        TEXT_AREA.value = localStorage.getItem('someText')
+        TEXT_AREA.addEventListener('keyup', (e) => {
+            const someText = TEXT_AREA.value
+            localStorage.setItem('someText', someText)
+        })
 
-            url = `${nationUrl}?name=${dataBase.name}`
-            response = await fetch(url)
-            data = await response.json()
-            dataBase.country = data.country[0].country_id 
-            
-            alert(`${dataBase.gender}, ${dataBase.country}`)
-
-
-
-
-        }
 
     </script>
 
