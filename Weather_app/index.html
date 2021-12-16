@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Weather</title>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <section class="search__section">
+                <button class="btn__search">
+                    <img src="./img/search.svg" alt="search button">
+                </button>
+                <div class="search">
+                    <input type="search" placeholder="Aktobe">
+                </div>
+            </section>
+            <section class="columns">
+                <div class="content">
+
+
+                    <div id="tab_01" class="tabs__block">
+                        <div class="now">
+                            <p class="temp">14°</p>
+                            <img src="./img/cloud.svg" alt="Cloudly">
+                            <div class="bottom">
+                                <span>Aktobe</span>
+                                <button>
+                                    <img src="./img/bookmark.svg" alt="Add to bookmarks">
+                                </button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="tab_02" class="tabs__block">
+                        <h2>Aktobe</h2>
+                        <ul>
+                            <li>Temperature: 14°</li>
+                            <li>Feels like: 10°</li>
+                            <li>Weather: Clouds</li>
+                            <li>Sunrise: 03.21</li>
+                            <li>Sunset: 18.54</li>
+                        </ul>
+                    </div>
+                    <div id="tab_03" class="tabs__block">
+                        <div class="details">
+                            <p>
+                                <span>17 may</span>
+                                <span>12:00</span>
+                            </p>
+                            <div>
+                                <p>Temperature: 13°</p>
+                                <p>Feels like: 10°</p>
+                                <img src="./img/icon-rain.svg" alt="Raining">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <nav class="tabs__items">
+
+                        <a href="#tab_01" class="tabs__item"><span>Now</span></a>
+                        <a href="#tab_02" class="tabs__item"><span>Details</span></a>
+                        <a href="#tab_03" class="tabs__item"><span>Forecast</span></a>
+                    </nav>
+
+                </div>
+                <div class="locations">
+                    <div class="header-locations">
+                        <span>Added locations:</span>
+                    </div>
+                    <div class="locations__added">
+                        <ul>
+                            <li>Amur</li>
+                            <li>Samara</li>
+                            <li>Bali</li>
+                            <li>Dane</li>
+                            <li>Kilo</li>
+                            <li>Nur-Sultan</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
