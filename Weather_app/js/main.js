@@ -1,11 +1,13 @@
 import { UI } from './view.js'
 
+UI.TABS[0].classList.add('tab__activated')
+
 UI.TABS.forEach((elem) => {
     elem.addEventListener('click', (e) => {
         UI.TABS.forEach((el) => {
-            el.classList.remove('btn__activated')
+            el.classList.remove('tab__activated')
         })
-        e.currentTarget.classList.add('btn__activated')
+        e.currentTarget.classList.add('tab__activated')
     })
 })
 

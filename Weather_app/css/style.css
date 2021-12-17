@@ -80,7 +80,7 @@
     border-right: 0px;
 }
 
-.btn__activated {
+.tab__activated {
     background: black;
     color: white;
     cursor: default;
