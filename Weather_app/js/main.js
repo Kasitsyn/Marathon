@@ -1,15 +1,19 @@
 import { UI } from './view.js'
 
-UI.TABS[0].classList.add('tab__activated')
+// UI.TABS_BTN[0].classList.add('tab__activated')
+// UI.TABS_CONTENT[0].classList.add('tabs__block:target')
 
-UI.TABS.forEach((elem) => {
+
+UI.TABS_BTN.forEach((elem) => {
     elem.addEventListener('click', (e) => {
-        UI.TABS.forEach((el) => {
+        UI.TABS_BTN.forEach((el) => {
             el.classList.remove('tab__activated')
         })
         e.currentTarget.classList.add('tab__activated')
     })
 })
+
+UI.TABS_BTN[0].click()
 
 const SERVER_URL = 'http://api.openweathermap.org/data/2.5/weather'
 const API_KEY = 'f660a2fb1e4bad108d6160b7f58c555f'
