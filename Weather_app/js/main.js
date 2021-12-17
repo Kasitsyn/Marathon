@@ -1,9 +1,5 @@
 import { UI } from './view.js'
 
-// UI.TABS_BTN[0].classList.add('tab__activated')
-// UI.TABS_CONTENT[0].classList.add('tabs__block:target')
-
-
 UI.TABS_BTN.forEach((elem) => {
     elem.addEventListener('click', (e) => {
         UI.TABS_BTN.forEach((el) => {
