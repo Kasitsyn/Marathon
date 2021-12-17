@@ -1,12 +1,37 @@
-import {UI} from './view.js'
+import { UI } from './view.js'
 
-UI.TABS.forEach( (elem) => {
+UI.TABS.forEach((elem) => {
     elem.addEventListener('click', (e) => {
-       UI.TABS.forEach((el) => {
-           el.classList.remove('btn__activated')
-       }) 
-       e.currentTarget.classList.add('btn__activated')
+        UI.TABS.forEach((el) => {
+            el.classList.remove('btn__activated')
+        })
+        e.currentTarget.classList.add('btn__activated')
     })
 })
 
-console.log()
+const SERVER_URL = 'http://api.openweathermap.org/data/2.5/weather'
+const API_KEY = 'f660a2fb1e4bad108d6160b7f58c555f'
+
+UI.INPUT_CITY.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        const cityName = UI.INPUT_CITY.value
+        const url = `${SERVER_URL}?q=${cityName}&appid=${API_KEY}`
+        
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const img = `http://openweathermap.org/img/wn/${data.weather.find(elem => elem.icon).icon}.png`
+                const temp = Math.round(data.main.temp - 273.15)
+                const city = data.name
+                UI.NOW_TEMP.textContent = `${temp}°`
+                UI.NOW_CITY.textContent = city
+                UI.NOW_IMG.src = img
+                
+                
+            })
+    }
+})
+
+
+
+console.log(UI.NOW_IMG.src);
