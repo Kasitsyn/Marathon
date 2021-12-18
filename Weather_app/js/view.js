@@ -4,6 +4,8 @@ export const UI = {
     INPUT_CITY: document.querySelector('.search > input'),
     NOW_TEMP: document.querySelector('.temp'),
     NOW_CITY: document.querySelector('.bottom > span'),
-    NOW_IMG: document.querySelector('.now > img')
-
+    NOW_IMG: document.querySelector('.now > img'),
+    NOW_BOOKMARK: document.querySelector('.bookmark'),
+    LOCATIONS: document.querySelector('.locations__added > ul'),
+    
 }

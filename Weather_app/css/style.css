@@ -96,7 +96,7 @@
 .tabs__block p {
     padding-top: 33px;
     padding-left: 17px;
-    margin: 0px 0px 0px 0px
+    margin: 0px 0px 0px 0px;
 }
 
 .tabs__block ul {
@@ -141,6 +141,10 @@
     cursor: pointer;
 }
 
+.bookmark img {
+    fill: rgb(255, 255, 255);
+}
+
 .bottom p {
     font-size: 24px;
 }
@@ -167,6 +171,16 @@
 .locations__added {
     font-size: 24px;
     line-height: 1.7;
+    
+}
+
+.locations__btn {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1.7;
+    
 }
 
 .locations__added ul {
