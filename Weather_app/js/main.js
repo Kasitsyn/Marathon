@@ -25,7 +25,8 @@ UI.NOW_BOOKMARK.addEventListener('click', (e) => {
     UI.NOW_BOOKMARK.setAttribute('hidden', 'true')
     UI.LOCATIONS_CITY = document.querySelector('.locations__btn')
     UI.LOCATIONS_CITY.addEventListener('click', (e) => {
-        getDataAndRenderNow()
+        getDataAndRenderNow(e.currentTarget.textContent)
+        // console.log(e.currentTarget.textContent);
     })
     console.log(UI.LOCATIONS_CITY)
 
