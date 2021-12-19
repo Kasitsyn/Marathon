@@ -190,6 +190,18 @@
     margin-top: 0px;
 }
 
+.btn__close {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1.7;
+    float: right;
+    color: gray;
+    padding-right: 40px;
+    margin-top: 5px;
+}
+
 /* @media (max-width: 600px) {
     .tabs__item span {
         display: block;
