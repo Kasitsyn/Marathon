@@ -4,12 +4,15 @@ const API_KEY = 'f660a2fb1e4bad108d6160b7f58c555f'
 const bookmarks = []
 
 UI.TABS_BTN.forEach(makeCurrentTabActviated)
-UI.INPUT_CITY.addEventListener('keydown', (e) => e.key === 'Enter' ? getDataAndRenderNow(UI.INPUT_CITY.value) : '')
+UI.INPUT_CITY.addEventListener('keydown', (e) => e.key === 'Enter' ? getDataAndRenderNow(e) : '')
 UI.NOW_BOOKMARK.addEventListener('click', addToBookmarks)
 UI.TABS_BTN[0].click()
 
-function getDataAndRenderNow(city) {
-    const cityName = city
+function getDataAndRenderNow(e) {
+    let cityName
+    if (e.currentTarget.className === 'search__input') cityName = e.currentTarget.value
+    else cityName = e.currentTarget.textContent
+
     const url = `${SERVER_URL}?q=${cityName}&appid=${API_KEY}`
     fetch(url)
         .then(response => response.json())
@@ -28,16 +31,9 @@ function getDataAndRenderNow(city) {
 
 function addToBookmarks(e) {
     bookmarks.push(UI.NOW_CITY.textContent.toLowerCase())
-    UI.LOCATIONS.insertAdjacentHTML('afterbegin', `<li><button class="locations__btn">${UI.NOW_CITY.textContent}</button><button class="btn__close">X</button></li>`);
     UI.NOW_BOOKMARK.setAttribute('hidden', 'true')
-    UI.LOCATIONS_CITY = document.querySelector('.locations__btn')
-    UI.LOCATIONS_CITY_DELETE = document.querySelector('.btn__close')
-    UI.LOCATIONS_CITY_DELETE.addEventListener('click', (e) => {
-        // bookmarks.find(e.currentTarget.textContent.toLowerCase())
-    })
-    UI.LOCATIONS_CITY.addEventListener('click', (e) => {
-        getDataAndRenderNow(e.currentTarget.textContent)
-    })
+    localStorage.setItem('bookmarks', bookmarks)
+    renderBokkmarks()
 }
 
 function makeCurrentTabActviated(elem) {
@@ -48,3 +44,29 @@ function makeCurrentTabActviated(elem) {
         e.currentTarget.classList.add('tab__activated')
     })
 }
+
+function deleteBookmark(e) {
+    const bookmarkToDelete = bookmarks.findIndex((el, index) => el == e.currentTarget.previousSibling.textContent.toLowerCase())
+    bookmarks.splice(bookmarkToDelete, 1)
+    renderBokkmarks()
+
+
+}
+
+function renderBokkmarks() {
+    UI.LOCATIONS.textContent = ''
+    bookmarks.forEach((elem) => {
+        UI.LOCATIONS.insertAdjacentHTML('afterbegin', `<li><button class="locations__btn">${elem}</button><button class="btn__close">X</button></li>`);
+        UI.LOCATIONS_CITY = document.querySelector('.locations__btn')
+        UI.LOCATIONS_CITY_DELETE = document.querySelector('.btn__close')
+        UI.LOCATIONS_CITY_DELETE.addEventListener('click', deleteBookmark)
+        UI.LOCATIONS_CITY.addEventListener('click', getDataAndRenderNow)
+    })
+
+}
+
+// storage.saveFavoriteCities(favoriteCities)
+// const favoriteCities = storage.getFavoriteCities();
+// const currentCity = storage.getCurrentCity();
+
+// console.log(localStorage.getItem('bookmarks'))
