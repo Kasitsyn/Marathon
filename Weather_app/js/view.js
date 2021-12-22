@@ -7,5 +7,5 @@ export const UI = {
     NOW_IMG: document.querySelector('.now > img'),
     NOW_BOOKMARK: document.querySelector('.bookmark'),
     LOCATIONS: document.querySelector('.locations__added > ul'),
-    
+    DETAILS: document.querySelector('#tab_02')
 }
