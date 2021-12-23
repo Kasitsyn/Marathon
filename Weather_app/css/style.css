@@ -155,7 +155,14 @@
 .temp {
     font-size: 70px;
 }
-.details {
+.forecast {
+    overflow: scroll; /* Добавляем полосы прокрутки */
+    
+    
+}
+
+.forecast > div {
+    border: 1px solid black;    
 }
 
 .locations {
