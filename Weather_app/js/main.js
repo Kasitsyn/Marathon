@@ -133,9 +133,10 @@ function makeCurrentTabActviated(elem) {
 }
 
 function deleteBookmark(e) {
-    const bookmarkToDelete = bookmarks.findIndex((el, index) => el == e.currentTarget.previousSibling.textContent.toLowerCase())
-    bookmarks.splice(bookmarkToDelete, 1)
-    saveToLocalStorage('bookmarks', bookmarks)
+    // const bookmarkToDelete = bookmarks.findIndex((el, index) => el == e.currentTarget.previousSibling.textContent.toLowerCase())
+    // bookmarks.splice(bookmarkToDelete, 1)
+    bookmarks.delete(e.currentTarget.previousSibling.textContent.toLowerCase())
+    saveToLocalStorage('bookmarks', [...bookmarks])
     renderBookmarks()
 }
 
