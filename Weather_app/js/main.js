@@ -1,7 +1,7 @@
 import { UI } from './view.js'
 
-const API_KEY = 'f660a2fb1e4bad108d6160b7f58c555f'
-let bookmarks
+const API_KEY = '75242b2638b19851dd7e8d440ed85dc2'
+let bookmarks = new Set()
 let storage
 onLoad()
 
@@ -24,7 +24,7 @@ function onLoad() {
     UI.NOW_BOOKMARK.addEventListener('click', addToBookmarks)
     renderNow()
     renderDetails()
-    renderBokkmarks()
+    renderBookmarks()
     renderForecast()
     NOW_TAB.click()
 }
@@ -33,7 +33,7 @@ function renderNow() {
     UI.NOW_TEMP.textContent = `${storage.temperature}°`
     UI.NOW_CITY.textContent = storage.city
     UI.NOW_IMG.src = storage.img
-    if (bookmarks.includes(storage.city.toLowerCase())) UI.NOW_BOOKMARK.setAttribute('hidden', 'true')
+    if (Array.from(bookmarks).includes(storage.city.toLowerCase())) UI.NOW_BOOKMARK.setAttribute('hidden', 'true')
     else UI.NOW_BOOKMARK.removeAttribute('hidden')
     UI.INPUT_CITY.value = ''
 
@@ -69,7 +69,7 @@ function renderForecast() {
 
 }
 
-function renderBokkmarks() {
+function renderBookmarks() {
     UI.LOCATIONS.textContent = ''
     bookmarks.forEach((elem) => {
         UI.LOCATIONS.insertAdjacentHTML('afterbegin', `<li><button class="locations__btn">${elem}</button><button class="btn__close">X</button></li>`);
@@ -116,10 +116,11 @@ function getData(e) {
 }
 
 function addToBookmarks(e) {
-    bookmarks.push(UI.NOW_CITY.textContent.toLowerCase())
+    bookmarks.add(UI.NOW_CITY.textContent.toLowerCase())
+    // bookmarks.push(UI.NOW_CITY.textContent.toLowerCase())
     UI.NOW_BOOKMARK.setAttribute('hidden', 'true')
-    saveToLocalStorage('bookmarks', bookmarks)
-    renderBokkmarks()
+    saveToLocalStorage('bookmarks', [...bookmarks])
+    renderBookmarks()
 }
 
 function makeCurrentTabActviated(elem) {
@@ -135,13 +136,13 @@ function deleteBookmark(e) {
     const bookmarkToDelete = bookmarks.findIndex((el, index) => el == e.currentTarget.previousSibling.textContent.toLowerCase())
     bookmarks.splice(bookmarkToDelete, 1)
     saveToLocalStorage('bookmarks', bookmarks)
-    renderBokkmarks()
+    renderBookmarks()
 }
 
 function getDataFromLocalStorage() {
     if (localStorage.data) storage = JSON.parse(localStorage.data)
     else return {}
-    if (localStorage.bookmarks) bookmarks = JSON.parse(localStorage.bookmarks)
+    if (localStorage.bookmarks) bookmarks = new Set(JSON.parse(localStorage.bookmarks))
     else return []
 }
 
