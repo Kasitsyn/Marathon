@@ -47,8 +47,8 @@ function renderDetails() {
             <li>Temperature: ${storage.temperature}</li>
             <li>Feels like: ${storage.feelsLike}</li>
             <li>Weather: ${storage.weather}</li>
-            <li>Sunrise: ${storage.sunrise}</li>
-            <li>Sunset: ${storage.sunset}</li>
+            <li>Sunrise: ${convertDate(storage.sunrise)}</li>
+            <li>Sunset: ${convertDate(storage.sunset)}</li>
         </ul>`)
 }
 
@@ -151,3 +151,10 @@ function saveToLocalStorage(name, storage) {
     localStorage[name] = JSON.stringify(storage)
 }
 
+function convertDate(params) {
+    const date = new Date(params * 1000)
+    const covertedDate = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    return covertedDate
+}
+
+convertDate(1642128331)
