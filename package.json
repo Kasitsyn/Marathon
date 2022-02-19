@@ -1,0 +1,22 @@
+{
+  "name": "marathon",
+  "version": "1.0.0",
+  "description": "learning front-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kasitsyn/Marathon.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Kasitsyn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kasitsyn/Marathon/issues"
+  },
+  "homepage": "https://github.com/Kasitsyn/Marathon#readme"
+}
