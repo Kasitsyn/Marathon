@@ -1,8 +1,10 @@
 import { UI } from './view.js'
+// import { compareAsc, format } from '../../node_modules/date-fns'
 
 const API_KEY = '75242b2638b19851dd7e8d440ed85dc2'
 let bookmarks = new Set()
-let storage
+let storage = {}
+storage.forecast = {}
 onLoad()
 
 function onLoad() {
@@ -30,12 +32,18 @@ function onLoad() {
 }
 
 function renderNow() {
-    UI.NOW_TEMP.textContent = `${storage.temperature}°`
-    UI.NOW_CITY.textContent = storage.city
-    UI.NOW_IMG.src = storage.img
-    if (Array.from(bookmarks).includes(storage.city.toLowerCase())) UI.NOW_BOOKMARK.setAttribute('hidden', 'true')
-    else UI.NOW_BOOKMARK.removeAttribute('hidden')
-    UI.INPUT_CITY.value = ''
+    if (Object.keys(storage).length === 0) {
+        UI.NOW_TEMP.textContent = '°'
+    } else {
+        UI.NOW_TEMP.textContent = `${storage.temperature}°`
+        UI.NOW_CITY.textContent = storage.city
+        UI.NOW_IMG.src = storage.img
+        if (Array.from(bookmarks).includes(storage.city.toLowerCase())) UI.NOW_BOOKMARK.setAttribute('hidden', 'true')
+        else UI.NOW_BOOKMARK.removeAttribute('hidden')
+        UI.INPUT_CITY.value = ''
+    }
+
+
 
 }
 
@@ -54,18 +62,20 @@ function renderDetails() {
 
 function renderForecast() {
     UI.FORECAST.textContent = ''
-    storage.forecast.list.forEach(elem => {
-        const img = `https://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`
-        UI.FORECAST.insertAdjacentHTML('afterbegin',
-            `<div>
+    if (storage.forecast.list !== '') {
+        storage.forecast.list.forEach(elem => {
+            const img = `https://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`
+            UI.FORECAST.insertAdjacentHTML('afterbegin',
+                `<div>
                 <p>${elem.dt_txt}</p>
                 <p>Temperature: ${elem.main.temp}°</p>
                 <p>Feels like: ${elem.main.feels_like}°</p>
                 <p>${elem.weather[0].description}</p>
                 <img src=${img} alt="${elem.weather[0].description}">
             </div>`)
-    })
-    UI.FORECAST.insertAdjacentHTML('afterbegin', `<p>${storage.forecast.city}</p>`)
+        })
+        UI.FORECAST.insertAdjacentHTML('afterbegin', `<p>${storage.forecast.city}</p>`)
+    }
 
 }
 
@@ -107,7 +117,7 @@ function getData(e) {
         }).then(() => fetch(forecastURL)
             .then(response => response.json())
             .then(data => {
-                storage.forecast = {}
+                
                 storage.forecast.city = data.city.name
                 storage.forecast.list = data.list
                 saveToLocalStorage('data', storage)
@@ -142,9 +152,20 @@ function deleteBookmark(e) {
 
 function getDataFromLocalStorage() {
     if (localStorage.data) storage = JSON.parse(localStorage.data)
-    else return {}
+    else {
+        storage.img = ''
+        storage.temperature = ''
+        storage.city = ''
+        storage.feelsLike = ''
+        storage.weather = ''
+        storage.sunrise = ''
+        storage.sunset = ''
+        
+        storage.forecast.city = ''
+        storage.forecast.list = ''
+    }
     if (localStorage.bookmarks) bookmarks = new Set(JSON.parse(localStorage.bookmarks))
-    else return []
+    
 }
 
 function saveToLocalStorage(name, storage) {
