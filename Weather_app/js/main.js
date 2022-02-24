@@ -1,5 +1,5 @@
 import { UI } from './view.js'
-// import { compareAsc, format } from '../../node_modules/date-fns'
+import { compareAsc, format } from '../../node_modules/date-fns'
 
 const API_KEY = '75242b2638b19851dd7e8d440ed85dc2'
 let bookmarks = new Set()
@@ -8,6 +8,7 @@ storage.forecast = {}
 onLoad()
 
 function onLoad() {
+    alert('asda')
     const NOW_TAB = UI.TABS_BTN[0]
     const DETAILS_TAB = UI.TABS_BTN[1]
     const FORCAST_TAB = UI.TABS_BTN[2]
@@ -123,6 +124,7 @@ function getData(e) {
                 saveToLocalStorage('data', storage)
             }))
         .catch(error => alert(error.message))
+        
 }
 
 function addToBookmarks(e) {
@@ -174,8 +176,9 @@ function saveToLocalStorage(name, storage) {
 
 function convertDate(params) {
     const date = new Date(params * 1000)
-    const covertedDate = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    const covertedDate2 = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    const covertedDate = format(new Date(params * 1000), "HH:mm")
     return covertedDate
 }
 
-convertDate(1642128331)
+
