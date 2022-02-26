@@ -44,7 +44,7 @@ function renderNow () {
     UI.NOW_IMG.src = storage.img
     if (Array.from(bookmarks).includes(storage.city.toLowerCase())) UI.NOW_BOOKMARK.setAttribute('hidden', 'true')
     else UI.NOW_BOOKMARK.removeAttribute('hidden')
-    UI.INPUT_CITY.value = getCookie('cityName')
+    UI.INPUT_CITY.value = '' ?? getCookie('cityName')
   }
 }
 
