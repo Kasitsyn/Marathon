@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Chatick</title>
+</head>
+
+<body>
+
+    <header>
+        <button class="settingsBtn btn">Настройки</button>
+        <button class="exitBtn btn">Выйти</button>
+    </header>
+    <main>
+        <div class="myMessage message">
+            <span>Я: </span><span>Добрый день!</span>
+            <p>18:45</p>
+        </div>
+        <div class="otherMessage message">
+            <span>Собеседник мой: </span><span>Добрый день!</span>
+            <p class="messageTime">18:45</p>
+        </div>
+
+    </main>
+    <footer>
+        <form action="" class="messageForm">
+            <input type="text" placeholder="Cообщение.." class="inputMessage">
+            <input type="submit" value='->' class="submitBtn btn">
+        </form>
+    </footer>
+
+</body>
+
+</html>
