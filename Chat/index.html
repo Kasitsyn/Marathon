@@ -20,20 +20,24 @@
             <button class="exitBtn btn">Выйти</button>
         </header>
         <main>
-            <div class="myMessage message">
-                <span>Я: </span><span>Добрый день!</span>
-                <p>18:45</p>
-            </div>
-            <div class="otherMessage message">
-                <span>Собеседник мой: </span><span>Добрый день!</span>
-                <p class="messageTime">18:45</p>
-            </div>
+            <template class="temlpMyMsg">
+                <div class="myMessage message">
+                    <span>Я: </span><span class="messageTxt"></span>
+                    <p>18:45</p>
+                </div>
+            </template>
+            <template class="temlpOtherMsg">
+                <div class="otherMessage message">
+                    <span>Собеседник мой: </span><span>Добрый день!</span>
+                    <p class="messageTime">18:45</p>
+                </div>
+            </template>
 
         </main>
         <footer>
             <form action="" class="messageForm">
                 <input type="text" placeholder="Cообщение.." class="inputMessage">
-                <input type="submit" value='->' class="submitBtn btn">
+                <input type="submit" value='->' class="submitMsgBtn btn">
             </form>
         </footer>
     </div>
@@ -54,7 +58,7 @@
             </form>
         </div>
     </section>
-
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
