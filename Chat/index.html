@@ -41,21 +41,56 @@
             </form>
         </footer>
     </div>
-    <section class="modalName">
 
-        <div class="modalName__block">
-            <div class="modalName__block-topWrapper">
+    <section class="modal name_modal">
+
+        <div class="modal__block">
+            <div class="modal__block-topWrapper">
                 <h1 class="title">Настройки</h1>
                 <button class="closeBtn"><img src="./img/close_btn.svg" alt="закрыть"></button>
             </div>
-            <h2 class="subTitle">
-                Имя в чате
-            </h2>
-            <form action="" class="modalName__form">
-                <input type="text" placeholder="Стив" class="modalName__form-input">
+            <form action="" class="modal__form">
+                <label for="name" class="subTitle">Имя в чате</label>
+                <input type="text" placeholder="Стив" class="modal__form-input" name="name">
                 <input type="submit" value="->" class="submitBtn btn">
-
             </form>
+            
+        </div>
+    </section>
+
+    <section class="modal auth_modal">
+
+        <div class="modal__block">
+            <div class="modal__block-topWrapper">
+                <h1 class="title">Создать аккаунт</h1>
+                <button class="closeBtn"><img src="./img/close_btn.svg" alt="закрыть"></button>
+            </div>
+            <form action="" class="modal__form">
+                <label for="login" class="subTitle">Имя(логин)</label>
+                <input type="text" class="modal__form-input" name="login">
+                <label for="pass" class="subTitle">Пароль</label>
+                <input type="password" class="modal__form-input modal-password" name="pass">
+                <input type="submit" value="Создать" class="submitBtn btn">
+            </form>
+            <button class="modal_bottom_link haveAccountBtn">У меня уже есть аккаунт (войти)</button>
+        </div>
+    </section>
+
+    <section class="modal auth_modal">
+
+        <div class="modal__block">
+            <div class="modal__block-topWrapper">
+                <h1 class="title">Авторизация</h1>
+                <button class="closeBtn"><img src="./img/close_btn.svg" alt="закрыть"></button>
+            </div>
+            <form action="" class="modal__form">
+                <label for="login" class="subTitle">Имя(логин)</label>
+                <input type="text" class="modal__form-input" name="login">
+                <label for="pass" class="subTitle">Пароль</label>
+                <input type="password" class="modal__form-input modal-password" name="pass">
+                <input type="submit" value="Войти" class="submitBtn btn">
+            </form>
+            <button class="modal_bottom_link modal-registration">Регистрация</button>
         </div>
     </section>
     <script type="module" src="./js/main.js"></script>

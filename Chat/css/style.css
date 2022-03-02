@@ -12,7 +12,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 21px;
+    line-height: 18.75px;
 }
 
 a {
@@ -23,7 +23,8 @@ p,
 h1,
 h2,
 h3,
-h4 {
+h4,
+button {
     padding: 0;
     margin: 0;
 }
@@ -129,7 +130,7 @@ footer {
 
 /* MODAL NAME */
 
-.modalName {
+.modal {
     width: 321px;
     height: 533px;
     min-width: 320px;
@@ -142,7 +143,7 @@ footer {
     border: solid black 1px;
 }
 
-.modalName__block {
+.modal__block {
     width: 273px;
     height: 319px;
     background-color: white;
@@ -151,7 +152,7 @@ footer {
     border: solid black 1px;
 }
 
-.modalName__block-topWrapper {
+.modal__block-topWrapper {
     display: flex;
     justify-content: space-between;
     margin-top: 16px;
@@ -176,18 +177,33 @@ footer {
     margin-top: 3px;
 }
 
+
+
+.modal__form {
+    margin-left: 15px;
+}
+
 .subTitle {
     font-size: 16px;
     font-weight: 400;
-    margin-left: 15px;
+    
+    
+}
+
+.modal__form-input {
+    margin-top: 8px;
     margin-bottom: 8px;
-}
-
-.modalName__form {
-    margin-left: 15px;
-}
-
-.modalName__form-input {
     padding: 8px;
     border: solid black 1px;
+}
+
+.modal-password {
+    
+}
+
+.modal_bottom_link {
+    display: block;
+    background: none;
+    border: none; 
+    margin: 42px auto 0;
 }
