@@ -22,14 +22,14 @@
         <main>
             <template class="temlpMyMsg">
                 <div class="myMessage message">
-                    <span>Я: </span><span class="messageTxt"></span>
-                    <p>18:45</p>
+                    <span>Me: </span><span class="messageTxt"></span>
+                    <p>time</p>
                 </div>
             </template>
             <template class="temlpOtherMsg">
                 <div class="otherMessage message">
-                    <span>Собеседник мой: </span><span>Добрый день!</span>
-                    <p class="messageTime">18:45</p>
+                    <span>name: </span><span>Добрый день!</span>
+                    <p class="messageTime">time</p>
                 </div>
             </template>
 
@@ -42,6 +42,8 @@
         </footer>
     </div>
 
+    <!-- NAME MODAL -->
+
     <section class="modal name_modal">
 
         <div class="modal__block">
@@ -51,46 +53,43 @@
             </div>
             <form action="" class="modal__form">
                 <label for="name" class="subTitle">Имя в чате</label>
-                <input type="text" placeholder="Стив" class="modal__form-input" name="name">
-                <input type="submit" value="->" class="submitBtn btn">
+                <input type="text" placeholder="Стив" class="modal__form-input changeName" name="name">
+                <input type="submit" value="->" class="submitBtn btn changeNameBtn">
             </form>
-            
+
         </div>
     </section>
 
-    <section class="modal auth_modal">
-
-        <div class="modal__block">
-            <div class="modal__block-topWrapper">
-                <h1 class="title">Создать аккаунт</h1>
-                <button class="closeBtn"><img src="./img/close_btn.svg" alt="закрыть"></button>
-            </div>
-            <form action="" class="modal__form">
-                <label for="login" class="subTitle">Имя(логин)</label>
-                <input type="text" class="modal__form-input" name="login">
-                <label for="pass" class="subTitle">Пароль</label>
-                <input type="password" class="modal__form-input modal-password" name="pass">
-                <input type="submit" value="Создать" class="submitBtn btn">
-            </form>
-            <button class="modal_bottom_link haveAccountBtn">У меня уже есть аккаунт (войти)</button>
-        </div>
-    </section>
+    <!-- AUTHORIZATION MODAL -->
 
     <section class="modal auth_modal">
-
         <div class="modal__block">
             <div class="modal__block-topWrapper">
                 <h1 class="title">Авторизация</h1>
                 <button class="closeBtn"><img src="./img/close_btn.svg" alt="закрыть"></button>
             </div>
             <form action="" class="modal__form">
-                <label for="login" class="subTitle">Имя(логин)</label>
-                <input type="text" class="modal__form-input" name="login">
-                <label for="pass" class="subTitle">Пароль</label>
-                <input type="password" class="modal__form-input modal-password" name="pass">
-                <input type="submit" value="Войти" class="submitBtn btn">
+                <label for="login" class="subTitle">Почта:</label>
+                <input type="email" class="modal__form-input emailInput" name="email">
+                <input type="submit" value="Получить код" class="submitBtn btn getCodeBtn">
             </form>
-            <button class="modal_bottom_link modal-registration">Регистрация</button>
+        </div>
+    </section>
+
+    <!-- CONFIRM MODAL -->
+
+    <section class="modal confirm_modal">
+
+        <div class="modal__block">
+            <div class="modal__block-topWrapper">
+                <h1 class="title">Подтверждение</h1>
+                <button class="closeBtn"><img src="./img/close_btn.svg" alt="закрыть"></button>
+            </div>
+            <form action="" class="modal__form">
+                <label for="login" class="subTitle">Код:</label>
+                <input type="text" class="modal__form-input confirmCodeInput" name="confirm">
+                <input type="submit" value="Войти" class="submitBtn btn confirmBtn">
+            </form>
         </div>
     </section>
     <script type="module" src="./js/main.js"></script>

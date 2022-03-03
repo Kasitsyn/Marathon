@@ -58,6 +58,7 @@ button {
     padding: 8px;
     background-color: white;
     border: solid black 1px;
+    cursor: pointer;
 }
 
 
@@ -93,18 +94,20 @@ main {
 
 .message {
     width: fit-content;
-    background-color: #E5E5E5;
     margin-bottom: 8px;
     padding: 8px;
+    border-radius: 10px;
 }
 
 .myMessage {
     align-self: flex-end;
     margin-right: 8px;
+    background-color: #d9fbff;
 }
 
 .otherMessage {
     margin-left: 8px;
+    background-color: #f1d9ff;
 }
 
 
@@ -195,6 +198,11 @@ footer {
     margin-bottom: 8px;
     padding: 8px;
     border: solid black 1px;
+    width: 245px;
+}
+
+.changeName {
+    width: 207px;
 }
 
 .modal-password {
