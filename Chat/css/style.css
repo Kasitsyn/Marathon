@@ -90,6 +90,11 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    overflow: hidden auto;
+}
+
+.chatWrapper {
+    
 }
 
 .message {

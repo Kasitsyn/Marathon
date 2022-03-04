@@ -8,7 +8,7 @@ import { getCookie, setCookie, deleteCookie } from './cookies.js';
 
 UI.SEND_BTN.addEventListener('click', (e) => {
     e.preventDefault()
-    RENDER.showMsg()
+    RENDER.showMsg(STORAGE.messageData)
 })
 
 UI.GET_CODE_BTN.addEventListener('click', (e) => {
@@ -33,8 +33,15 @@ UI.CHANGE_NAME_BTN.addEventListener('click', async (e) => {
 document.ondblclick = async (e) => {
     e.preventDefault()
     const messagesHistory = await API.getMsgHistory()
-    STORAGE.saveMsgToStorage(messagesHistory)
-        
+
+    STORAGE.saveMsgHistory(messagesHistory)
+    console.log(messagesHistory[0]);
+    STORAGE.saveMsgData(messagesHistory[0])
+    console.log(STORAGE.messageData)
+
+    STORAGE.messagesHistory.forEach(messageData => {
+        RENDER.showMsg(messageData)
+    });
 }
 
 
