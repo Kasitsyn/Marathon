@@ -1,22 +1,22 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    width: 320px;
-    height: 533px;
-    min-width: 320px;
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 18.75px;
+  width: 320px;
+  height: 533px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.75px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 p,
@@ -25,198 +25,195 @@ h2,
 h3,
 h4,
 button {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .btn {
-    padding: 8px;
-    background-color: white;
-    border: solid black 1px;
-    cursor: pointer;
+  padding: 8px;
+  background-color: white;
+  border: solid black 1px;
+  cursor: pointer;
 }
-
 
 /* HEADER */
 
 header {
-    width: 304px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 7px;
+  width: 304px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
 }
 
-.settingsBtn {}
+.settingsBtn {
+}
 
-.exitBtn {}
-
+.exitBtn {
+}
 
 /* MAIN */
 
 .container {
-    padding: 8px
+  padding: 8px;
 }
 
 main {
-    border: solid black 1px;
-    width: 304px;
-    height: 437px;
-    margin-bottom: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    overflow: hidden auto;
+  border: solid black 1px;
+  width: 304px;
+  height: 437px;
+  margin-bottom: 8px;
+  overflow: hidden auto;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-.chatWrapper {
-    
-}
+/* .chatWrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  
+} */
 
 .message {
-    width: fit-content;
-    margin-bottom: 8px;
-    padding: 8px;
-    border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 10px;
 }
 
 .myMessage {
-    align-self: flex-end;
-    margin-right: 8px;
-    background-color: #d9fbff;
+  align-self: flex-end;
+  margin-right: 8px;
+  background-color: #d9fbff;
 }
 
 .otherMessage {
-    margin-left: 8px;
-    background-color: #f1d9ff;
+  margin-left: 8px;
+  background-color: #f1d9ff;
 }
-
 
 /* FOOTER */
 
 footer {
-    width: 304px;
+  width: 304px;
 }
 
 .messageForm {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .inputMessage {
-    width: 267px;
-    padding: 8px;
-    border: solid black 1px;
+  width: 267px;
+  padding: 8px;
+  border: solid black 1px;
 }
 
-.submitBtn {}
-
+.submitBtn {
+}
 
 /* MODAL NAME */
 
 .modal {
-    width: 321px;
-    height: 533px;
-    min-width: 320px;
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 21px;
-    background-color: #535353;
-    border: solid black 1px;
+  width: 321px;
+  height: 533px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  background-color: #535353;
+  border: solid black 1px;
 }
 
 .modal__block {
-    width: 273px;
-    height: 319px;
-    background-color: white;
-    margin: 0 auto;
-    margin-top: 107px;
-    border: solid black 1px;
+  width: 273px;
+  height: 319px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 107px;
+  border: solid black 1px;
 }
 
 .modal__block-topWrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 16px;
-    margin-left: 15px;
-    margin-right: 15px;
-    align-items: center;
-    margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-left: 15px;
+  margin-right: 15px;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
 .title {
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .closeBtn {
-    background: none;
-    border: none;
-    text-align: center;
-    padding: 0;
-    height: 18px;
-    margin-top: 3px;
+  background: none;
+  border: none;
+  text-align: center;
+  padding: 0;
+  height: 18px;
+  margin-top: 3px;
 }
 
-
-
 .modal__form {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 .subTitle {
-    font-size: 16px;
-    font-weight: 400;
-    
-    
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .modal__form-input {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    padding: 8px;
-    border: solid black 1px;
-    width: 245px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: solid black 1px;
+  width: 245px;
 }
 
 .changeName {
-    width: 207px;
+  width: 207px;
 }
 
 .modal-password {
-    
 }
 
 .modal_bottom_link {
-    display: block;
-    background: none;
-    border: none; 
-    margin: 42px auto 0;
+  display: block;
+  background: none;
+  border: none;
+  margin: 42px auto 0;
 }

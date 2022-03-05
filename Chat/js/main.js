@@ -35,13 +35,13 @@ document.ondblclick = async (e) => {
     const messagesHistory = await API.getMsgHistory()
 
     STORAGE.saveMsgHistory(messagesHistory)
-    console.log(messagesHistory[0]);
+    console.log(messagesHistory);
     STORAGE.saveMsgData(messagesHistory[0])
     console.log(STORAGE.messageData)
 
-    STORAGE.messagesHistory.forEach(messageData => {
-        RENDER.showMsg(messageData)
-    });
+    // STORAGE.messagesHistory.forEach(messageData => {
+    //     RENDER.showMsg(messageData)
+    // });
 }
 
 
