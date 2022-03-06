@@ -33,9 +33,13 @@ UI.CHANGE_NAME_BTN.addEventListener('click', async (e) => {
 document.ondblclick = async (e) => {
     e.preventDefault()
     const messagesHistory = await API.getMsgHistory()
-
+    
     STORAGE.saveMsgHistory(messagesHistory)
     console.log(messagesHistory);
+    
+    const messageHistoryLast15 = STORAGE.messagesHistory.slice( (STORAGE.messagesHistory.length - 15), STORAGE.messagesHistory.length )
+    console.log(messageHistoryLast15);
+
     STORAGE.saveMsgData(messagesHistory[0])
     console.log(STORAGE.messageData)
 
