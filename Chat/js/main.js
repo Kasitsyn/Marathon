@@ -43,9 +43,9 @@ document.ondblclick = async (e) => {
     STORAGE.saveMsgData(messagesHistory[0])
     console.log(STORAGE.messageData)
 
-    // STORAGE.messagesHistory.forEach(messageData => {
-    //     RENDER.showMsg(messageData)
-    // });
+    messageHistoryLast15.forEach(messageData => {
+        RENDER.showMsg(messageData)
+    });
 }
 
 

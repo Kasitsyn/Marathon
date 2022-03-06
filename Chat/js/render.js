@@ -9,7 +9,7 @@ export const RENDER = {
         const sentMessages = document.querySelectorAll('.message')
         const lastMessage = sentMessages[sentMessages.length - 1]
 
-        if (true) {
+        if (message.email === STORAGE.myEmail.email) {
             lastMessage.classList.add('myMessage')
         }
 
