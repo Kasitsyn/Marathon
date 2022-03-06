@@ -1,6 +1,7 @@
 export const UI = {
     // CHAT
-    MY_MSG_TEMPLATE: document.querySelector('.temlpMyMsg'),
+    MSG_TEMPLATE: document.querySelector('.temlpMsg'),
+    MESSAGE: document.querySelector('.message'),
     OTHER_MSG_TEMPLATE: document.querySelector('.temlpOtherMsg'),
     CHAT: document.querySelector('main'),
     SEND_BTN: document.querySelector('.submitMsgBtn'),

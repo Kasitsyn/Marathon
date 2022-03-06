@@ -1,7 +1,7 @@
 import { UI } from './view.js';
 
 export const STORAGE = {
-    email: { email: '' },
+    myEmail: { email: '' },
     name: { name: '' },
 
     messagesHistory: [],

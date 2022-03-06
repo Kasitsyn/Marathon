@@ -17,7 +17,7 @@ export const API = {
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
-            body: JSON.stringify(STORAGE.email)
+            body: JSON.stringify(STORAGE.myEmail)
 
         })
         const content = await response.json()

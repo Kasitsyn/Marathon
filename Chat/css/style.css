@@ -88,34 +88,25 @@ main {
   height: 437px;
   margin-bottom: 8px;
   overflow: hidden auto;
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-/* .chatWrapper {
-  min-height: 100%;
+  scrollbar-width: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  
-} */
+}
 
 .message {
   width: fit-content;
   margin-bottom: 8px;
   padding: 8px;
   border-radius: 10px;
+  align-self: flex-start;
+  margin-left: 8px;
+  background-color:   #fcffd9;
 }
 
 .myMessage {
-  align-self: flex-end;
   margin-right: 8px;
   background-color: #d9fbff;
-}
-
-.otherMessage {
-  margin-left: 8px;
-  background-color: #f1d9ff;
+  align-self: flex-end;
 }
 
 /* FOOTER */

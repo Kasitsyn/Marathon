@@ -14,7 +14,7 @@ UI.SEND_BTN.addEventListener('click', (e) => {
 UI.GET_CODE_BTN.addEventListener('click', (e) => {
     e.preventDefault()
     STORAGE.saveToStorage('email', UI.EMAIL_INPUT.value)
-    console.log(STORAGE.email);
+    console.log(STORAGE.myEmail);
     API.getCode()
 })
 
