@@ -60,21 +60,4 @@ export const API = {
         return messagesHistory['messages']
     },
 
-    webSocketConnect() {
-        const socket = new WebSocket(`ws://chat1-341409.oa.r.appspot.com/websockets?${API.TOKEN}`)
-
-        socket.onopen = function (e) {
-            alert("[open] Соединение установлено")
-
-            alert("Отправляем данные на сервер")
-            socket.send(JSON.stringify({
-                text: 'абырвалг',
-            }))
-        }
-
-        socket.onmessage = function (event) {
-            alert(`[message] Данные получены с сервера: ${event.data}`);
-            console.log(event.data)
-        }
-    }
 }

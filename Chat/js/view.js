@@ -7,7 +7,7 @@ export const UI = {
     SEND_BTN: document.querySelector('.submitMsgBtn'),
     MESSAGE_FORM: document.querySelector('.messageForm'),
     MESSAGE_INPUT: document.querySelector('.inputMessage'),
-    // MESSAGE_OUTPUT: document.querySelector('.messageTxt'),
+        
 
     //AUTHORIZATION
     EMAIL_INPUT: document.querySelector('.emailInput'),

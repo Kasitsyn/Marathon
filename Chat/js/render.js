@@ -1,24 +1,27 @@
 import { UI } from './view.js';
 import { STORAGE } from './storage.js';
 export const RENDER = {
-    showMsg(message) {
+    showMsg(messageData) {
         console.log(STORAGE.myEmail.email)
-        
+        console.log(messageData);
+        console.log(messageData.user.email)
         UI.CHAT.append(UI.MSG_TEMPLATE.content.cloneNode(true))
 
         const sentMessages = document.querySelectorAll('.message')
-        const lastMessage = sentMessages[sentMessages.length - 1]
+        const message = sentMessages[sentMessages.length - 1]
 
-        if (message.email === STORAGE.myEmail.email) {
-            lastMessage.classList.add('myMessage')
+        if (messageData.user.email === STORAGE.myEmail.email) {
+            message.classList.add('myMessage')
         }
 
-        let lastMessageText = lastMessage.firstElementChild
-        let lastMessageTime = lastMessage.lastElementChild
-        const messageTimeFormated = new Date(Date.parse(message.createdAt)).toLocaleString("ru", { hour: 'numeric', minute: 'numeric' })
+        let messageUserName = message.children[0]
+        let messageText = message.children[1]
+        let messageTime = message.children[2]
+        const messageTimeFormated = new Date(Date.parse(messageData.createdAt)).toLocaleString("ru", { hour: 'numeric', minute: 'numeric' })
 
-        lastMessageText.innerHTML = message.text
-        lastMessageTime.innerHTML = messageTimeFormated
+        messageUserName.innerHTML = messageData.user.name
+        messageText.innerHTML = messageData.text
+        messageTime.innerHTML = messageTimeFormated
 
         UI.CHAT.scrollTop = UI.CHAT.scrollHeight
 

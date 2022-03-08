@@ -4,11 +4,33 @@ import { API } from './api.js'
 import { STORAGE } from './storage.js';
 import { getCookie, setCookie, deleteCookie } from './cookies.js';
 
-// API.webSocketConnect()
+const socket = new WebSocket(`ws://chat1-341409.oa.r.appspot.com/websockets?${API.TOKEN}`)
+
+window.onload = async (e) => {
+    const messagesHistory = await API.getMsgHistory()
+
+    STORAGE.saveMsgHistory(messagesHistory)
+    console.log(messagesHistory);
+
+    const messageHistoryLast100 = STORAGE.messagesHistory.slice((STORAGE.messagesHistory.length - 100), STORAGE.messagesHistory.length)
+    console.log(messageHistoryLast100);
+
+    messageHistoryLast100.forEach(messageData => {
+        RENDER.showMsg(messageData)
+    });
+}
+
+
+socket.onmessage = async function (event) {
+    RENDER.showMsg(JSON.parse(event.data))
+}
 
 UI.SEND_BTN.addEventListener('click', (e) => {
     e.preventDefault()
-    RENDER.showMsg(STORAGE.messageData)
+    socket.send(JSON.stringify({
+        text: UI.MESSAGE_INPUT.value,
+    }))
+
 })
 
 UI.GET_CODE_BTN.addEventListener('click', (e) => {
@@ -30,23 +52,7 @@ UI.CHANGE_NAME_BTN.addEventListener('click', async (e) => {
     API.changeName()
 })
 
-document.ondblclick = async (e) => {
-    e.preventDefault()
-    const messagesHistory = await API.getMsgHistory()
-    
-    STORAGE.saveMsgHistory(messagesHistory)
-    console.log(messagesHistory);
-    
-    const messageHistoryLast15 = STORAGE.messagesHistory.slice( (STORAGE.messagesHistory.length - 15), STORAGE.messagesHistory.length )
-    console.log(messageHistoryLast15);
 
-    STORAGE.saveMsgData(messagesHistory[0])
-    console.log(STORAGE.messageData)
-
-    messageHistoryLast15.forEach(messageData => {
-        RENDER.showMsg(messageData)
-    });
-}
 
 
 
