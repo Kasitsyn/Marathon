@@ -10,13 +10,15 @@ export const RENDER = {
         const sentMessages = document.querySelectorAll('.message')
         const message = sentMessages[sentMessages.length - 1]
 
+        let messageUserName = message.children[0]
+        let messageText = message.children[1]
+        let messageTime = message.children[2]
+
         if (messageData.user.email === STORAGE.myEmail.email) {
             message.classList.add('myMessage')
         }
 
-        let messageUserName = message.children[0]
-        let messageText = message.children[1]
-        let messageTime = message.children[2]
+        
         const messageTimeFormated = new Date(Date.parse(messageData.createdAt)).toLocaleString("ru", { hour: 'numeric', minute: 'numeric' })
 
         messageUserName.innerHTML = messageData.user.name

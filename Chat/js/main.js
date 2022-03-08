@@ -10,11 +10,8 @@ window.onload = async (e) => {
     const messagesHistory = await API.getMsgHistory()
 
     STORAGE.saveMsgHistory(messagesHistory)
-    console.log(messagesHistory);
 
     const messageHistoryLast100 = STORAGE.messagesHistory.slice((STORAGE.messagesHistory.length - 100), STORAGE.messagesHistory.length)
-    console.log(messageHistoryLast100);
-
     messageHistoryLast100.forEach(messageData => {
         RENDER.showMsg(messageData)
     });

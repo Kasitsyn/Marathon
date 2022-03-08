@@ -5,6 +5,7 @@
 }
 
 body {
+  
   width: 320px;
   height: 533px;
   min-width: 320px;
@@ -57,7 +58,8 @@ button {
 .btn {
   padding: 8px;
   background-color: white;
-  border: solid black 1px;
+  border: solid rgb(219, 219, 219) 1px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -79,11 +81,14 @@ header {
 /* MAIN */
 
 .container {
+  
   padding: 8px;
+  
 }
 
 main {
-  border: solid black 1px;
+  border: solid rgb(219, 219, 219) 1px;
+  border-radius: 5px;
   width: 304px;
   height: 437px;
   margin-bottom: 8px;
@@ -99,14 +104,34 @@ main {
   padding: 8px;
   border-radius: 10px;
   align-self: flex-start;
+  margin-top: 3px;
   margin-left: 8px;
-  background-color:   #fcffd9;
+  margin-right: 8px;
+  background-color: #fcffd9;
 }
 
 .myMessage {
   margin-right: 8px;
   background-color: #d9fbff;
   align-self: flex-end;
+}
+
+.userName {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.messageTxt {
+  font-size: 16px;
+
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.messageTime {
+  color: #949393;
+  font-size: 12px;
+  text-align: end;
 }
 
 /* FOOTER */
@@ -123,7 +148,8 @@ footer {
 .inputMessage {
   width: 267px;
   padding: 8px;
-  border: solid black 1px;
+  border: solid rgb(219, 219, 219) 1px;
+  border-radius: 5px;
 }
 
 .submitBtn {
