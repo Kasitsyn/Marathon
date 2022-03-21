@@ -1,0 +1,35 @@
+.todo_list__add_task,
+.todo_list__task {
+  border-radius: 6px;
+  border: 1px solid #989898;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+}
+
+.todo_list__input {
+  padding: 12px;
+  border: none;
+  flex-grow: 1;
+  outline: none;
+  background: none;
+  width: 369px;
+}
+
+.todo_list__input::placeholder {
+    color: #BBBBBB;
+}
+
+.todo_list__add_button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 12px;
+  width: 20px;
+  height: 20px;
+}
+
+.todo_list__add_button_icon {
+  display: block;
+}

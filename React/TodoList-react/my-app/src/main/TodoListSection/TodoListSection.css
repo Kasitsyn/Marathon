@@ -1,0 +1,9 @@
+.todo_list__title {
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.todo_list__section {
+  margin-bottom: 12px;
+}
